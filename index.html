@@ -117,87 +117,15 @@
             <!-- The Games Page -->
             <div id="games" class="page">
                  <h2 class="text-3xl font-bold text-cyan-400 mb-6">The Games</h2>
-                 <div class="bg-gray-800 rounded-lg p-8 shadow-xl">
-                    <h3 class="text-xl font-bold mb-2">Game 1: The Boolean Blacksmith</h3>
-                    <p class="text-gray-400 mb-4">You have a new role: "Senior Backend Engineer" specializing in distributed systems, located in Vienna, Austria. The client requires experience with Go (Golang) and Kubernetes. They have a strong preference for candidates who have contributed to open-source projects.</p>
-                    <p class="text-gray-300 mb-6 font-semibold">Your task: Craft the most effective Boolean search string to find these candidates on a professional networking site.</p>
-                    
-                    <form id="gameForm">
-                        <textarea id="gameInput" rows="4" class="w-full bg-gray-700 border border-gray-600 rounded-md p-3 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500" placeholder="e.g., (engineer OR developer) AND ..."></textarea>
-                        <button type="submit" class="mt-4 bg-cyan-600 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">Submit & Get Feedback</button>
-                    </form>
-
-                    <div id="feedbackContainer" class="mt-6 hidden">
-                        <div class="flex items-center mb-4">
-                            <h4 class="text-2xl font-bold text-cyan-400">AI Coach Feedback</h4>
-                            <div id="feedbackLoader" class="loader ml-4"></div>
-                        </div>
-                        <div id="feedbackResult" class="bg-gray-700 p-6 rounded-lg prose prose-invert max-w-none text-gray-300"></div>
-                    </div>
+                 <div class="bg-gray-800 rounded-lg p-8 shadow-xl mb-8">
+                    <h3 class="text-xl font-bold mb-2 text-white">Weekly Challenges</h3>
+                    <p class="text-gray-300">New sourcing missions unlock automatically every Friday. When the next week begins, this page refreshes with the latest active games&mdash;no code changes needed.</p>
                  </div>
-
-                 <!-- Game 2 -->
-                <div class="bg-gray-800 rounded-lg p-8 shadow-xl mt-8">
-                    <h3 class="text-xl font-bold mb-2">Game 2: The Persona Profiler</h3>
-                    <p class="text-gray-400 mb-4">Analyze the following job description snippet for a "Lead UX Designer" and create a concise candidate persona. Focus on key skills, experience level, and potential motivations.</p>
-                    <div class="text-sm bg-gray-700 p-4 rounded-md mb-4 border-l-4 border-cyan-500">
-                        "We're seeking a Lead UX Designer to own the user experience for our flagship B2B SaaS product. You'll guide a team of 3 designers, work with product managers to translate complex requirements into intuitive workflows, and champion a user-centered design culture. Must have 7+ years of experience, a portfolio showcasing complex problem-solving, and proficiency in Figma. Experience with data visualization is a huge plus."
-                    </div>
-                    <p class="text-gray-300 mb-6 font-semibold">Your task: Write a short candidate persona (3-4 sentences) that captures the essence of the ideal candidate.</p>
-                    
-                    <form id="gameForm2">
-                        <textarea id="gameInput2" rows="4" class="w-full bg-gray-700 border border-gray-600 rounded-md p-3 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500" placeholder="e.g., An experienced design leader motivated by mentoring..."></textarea>
-                        <button type="submit" class="mt-4 bg-cyan-600 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">Submit & Get Feedback</button>
-                    </form>
-
-                    <div id="feedbackContainer2" class="mt-6 hidden">
-                        <div class="flex items-center mb-4">
-                            <h4 class="text-2xl font-bold text-cyan-400">AI Coach Feedback</h4>
-                            <div id="feedbackLoader2" class="loader ml-4"></div>
-                        </div>
-                        <div id="feedbackResult2" class="bg-gray-700 p-6 rounded-lg prose prose-invert max-w-none text-gray-300"></div>
-                    </div>
-                </div>
-
-                <!-- Game 3 -->
-                <div class="bg-gray-800 rounded-lg p-8 shadow-xl mt-8">
-                    <h3 class="text-xl font-bold mb-2">Game 3: The Outreach Originator</h3>
-                    <p class="text-gray-400 mb-4">You've found a promising passive candidate for a "Senior DevOps Engineer" role. Her online profile shows she's been at her current company for 5 years and has spoken at a conference about "Scaling CI/CD Pipelines".</p>
-                    <p class="text-gray-300 mb-6 font-semibold">Your task: Write a concise and personalized outreach message (under 100 words) to this candidate to gauge her interest.</p>
-                    
-                    <form id="gameForm3">
-                        <textarea id="gameInput3" rows="5" class="w-full bg-gray-700 border border-gray-600 rounded-md p-3 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500" placeholder="e.g., Hi [Candidate Name], I was impressed by your talk on..."></textarea>
-                        <button type="submit" class="mt-4 bg-cyan-600 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">Submit & Get Feedback</button>
-                    </form>
-
-                    <div id="feedbackContainer3" class="mt-6 hidden">
-                        <div class="flex items-center mb-4">
-                            <h4 class="text-2xl font-bold text-cyan-400">AI Coach Feedback</h4>
-                            <div id="feedbackLoader3" class="loader ml-4"></div>
-                        </div>
-                        <div id="feedbackResult3" class="bg-gray-700 p-6 rounded-lg prose prose-invert max-w-none text-gray-300"></div>
-                    </div>
-                </div>
-
-                <!-- Game 4 -->
-                <div class="bg-gray-800 rounded-lg p-8 shadow-xl mt-8">
-                    <h3 class="text-xl font-bold mb-2">Game 4: The X-Ray Expert</h3>
-                    <p class="text-gray-400 mb-4">You need to find Python developers in Berlin who have experience with Django and have profiles on GitHub. Standard searches are not yielding good results.</p>
-                    <p class="text-gray-300 mb-6 font-semibold">Your task: Write a Google X-ray search string to find user profiles on GitHub that match these criteria.</p>
-                    
-                    <form id="gameForm4">
-                        <textarea id="gameInput4" rows="4" class="w-full bg-gray-700 border border-gray-600 rounded-md p-3 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500" placeholder="e.g., site:github.com ..."></textarea>
-                        <button type="submit" class="mt-4 bg-cyan-600 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">Submit & Get Feedback</button>
-                    </form>
-
-                    <div id="feedbackContainer4" class="mt-6 hidden">
-                        <div class="flex items-center mb-4">
-                            <h4 class="text-2xl font-bold text-cyan-400">AI Coach Feedback</h4>
-                            <div id="feedbackLoader4" class="loader ml-4"></div>
-                        </div>
-                        <div id="feedbackResult4" class="bg-gray-700 p-6 rounded-lg prose prose-invert max-w-none text-gray-300"></div>
-                    </div>
-                </div>
+                 <div id="gamesList" class="space-y-8"></div>
+                 <div id="gamesEmptyState" class="hidden bg-gray-800 rounded-lg p-8 shadow-xl text-center">
+                    <h3 class="text-xl font-bold text-white mb-2">No games are active yet.</h3>
+                    <p class="text-gray-400">Check back on Friday to see the newest sourcing challenge.</p>
+                 </div>
             </div>
 
             <!-- AI Coach Page -->
@@ -296,31 +224,15 @@
             const navLinks = document.querySelectorAll('.nav-link');
             const playerNameHome = document.getElementById('playerNameHome');
             const leaderboardBody = document.getElementById('leaderboardBody');
-            const gameForm = document.getElementById('gameForm');
-            const gameInput = document.getElementById('gameInput');
-            const feedbackContainer = document.getElementById('feedbackContainer');
-            const feedbackLoader = document.getElementById('feedbackLoader');
-            const feedbackResult = document.getElementById('feedbackResult');
-            const gameForm2 = document.getElementById('gameForm2');
-            const gameInput2 = document.getElementById('gameInput2');
-            const feedbackContainer2 = document.getElementById('feedbackContainer2');
-            const feedbackLoader2 = document.getElementById('feedbackLoader2');
-            const feedbackResult2 = document.getElementById('feedbackResult2');
-            const gameForm3 = document.getElementById('gameForm3');
-            const gameInput3 = document.getElementById('gameInput3');
-            const feedbackContainer3 = document.getElementById('feedbackContainer3');
-            const feedbackLoader3 = document.getElementById('feedbackLoader3');
-            const feedbackResult3 = document.getElementById('feedbackResult3');
-            const gameForm4 = document.getElementById('gameForm4');
-            const gameInput4 = document.getElementById('gameInput4');
-            const feedbackContainer4 = document.getElementById('feedbackContainer4');
-            const feedbackLoader4 = document.getElementById('feedbackLoader4');
-            const feedbackResult4 = document.getElementById('feedbackResult4');
+            const gamesList = document.getElementById('gamesList');
+            const gamesEmptyState = document.getElementById('gamesEmptyState');
             const coachForm = document.getElementById('coachForm');
             const coachInput = document.getElementById('coachInput');
             const chatBox = document.getElementById('chatBox');
             const mobileMenuButton = document.getElementById('mobileMenuButton');
             const mobileMenu = document.getElementById('mobileMenu');
+
+            let activeGames = [];
             
             // --- GEMINI API CONFIG ---
             // NOTE: In a real application, the API key would not be exposed here.
@@ -334,12 +246,9 @@
             const init = () => {
                 nameForm.addEventListener('submit', handleNameSubmit);
                 navLinks.forEach(link => link.addEventListener('click', handleNavClick));
-                gameForm.addEventListener('submit', handleGameSubmit);
-                gameForm2.addEventListener('submit', handleGameSubmit2);
-                gameForm3.addEventListener('submit', handleGameSubmit3);
-                gameForm4.addEventListener('submit', handleGameSubmit4);
                 coachForm.addEventListener('submit', handleCoachSubmit);
                 mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+                loadGames();
             };
 
             // Handle user name submission
@@ -401,35 +310,137 @@
                 });
             };
 
-            // Handle game submission
-            async function handleGameSubmit(e) {
-                e.preventDefault();
-                const submission = gameInput.value.trim();
-                if (!submission) return;
+            const loadGames = () => {
+                if (!gamesList) {
+                    return;
+                }
 
-                feedbackContainer.classList.remove('hidden');
-                feedbackResult.classList.add('hidden');
-                feedbackLoader.style.display = 'block';
-                
-                const prompt = `
-                    You are an expert AI Sourcing Coach for recruiters. A participant has submitted the following Boolean search string for a 'Senior Backend Engineer' role in Vienna, Austria, with skills in Go (Golang), Kubernetes, and open-source contributions.
-                    
-                    Submission: "${submission}"
-                    
-                    Your task is to:
-                    1.  Analyze the string for effectiveness, precision, and potential missed keywords.
-                    2.  Provide a score out of 100. The score MUST be on its own line like this: SCORE: [number].
-                    3.  Give 3 concrete, actionable tips for improvement in a bulleted list.
-                    4.  Provide an improved version of their string.
-                    5.  Format your response in simple markdown.
-                `;
+                const handleGames = (games) => renderGames(games);
+                const handleError = (error) => {
+                    console.error('Unable to load games from Apps Script:', error);
+                    renderGames(getFallbackGames());
+                };
+
+                if (typeof google !== 'undefined' && google.script && google.script.run) {
+                    google.script.run
+                        .withSuccessHandler(handleGames)
+                        .withFailureHandler(handleError)
+                        .getActiveGames();
+                } else {
+                    renderGames(getFallbackGames());
+                }
+            };
+
+            const renderGames = (games) => {
+                if (!gamesList) {
+                    return;
+                }
+
+                activeGames = (Array.isArray(games) ? games : [])
+                    .map((game, index) => normalizeGame(game, index))
+                    .filter(Boolean);
+
+                gamesList.innerHTML = '';
+
+                if (!activeGames.length) {
+                    if (gamesEmptyState) {
+                        gamesEmptyState.classList.remove('hidden');
+                    }
+                    return;
+                }
+
+                if (gamesEmptyState) {
+                    gamesEmptyState.classList.add('hidden');
+                }
+
+                activeGames.forEach((game, index) => {
+                    const card = createGameCard(game, index);
+                    gamesList.appendChild(card);
+                });
+            };
+
+            const createGameCard = (game, index) => {
+                const card = document.createElement('div');
+                card.className = 'bg-gray-800 rounded-lg p-8 shadow-xl';
+
+                const title = document.createElement('h3');
+                title.className = 'text-xl font-bold mb-2 text-white';
+                title.textContent = game.title || `Game ${index + 1}`;
+                card.appendChild(title);
+
+                if (game.instructions) {
+                    const instructionWrapper = document.createElement('div');
+                    instructionWrapper.className = 'text-gray-300 mb-6 space-y-3';
+                    instructionWrapper.innerHTML = formatTextWithLineBreaks(game.instructions);
+                    card.appendChild(instructionWrapper);
+                }
+
+                const form = document.createElement('form');
+                form.dataset.gameIndex = index;
+
+                const textarea = document.createElement('textarea');
+                const rows = Number(game.rows) || 4;
+                textarea.rows = rows;
+                textarea.className = 'w-full bg-gray-700 border border-gray-600 rounded-md p-3 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500';
+                textarea.placeholder = game.inputPlaceholder || '';
+                form.appendChild(textarea);
+
+                const submitButton = document.createElement('button');
+                submitButton.type = 'submit';
+                submitButton.className = 'mt-4 bg-cyan-600 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded-md transition duration-300';
+                submitButton.textContent = 'Submit & Get Feedback';
+                form.appendChild(submitButton);
+
+                const feedbackContainer = document.createElement('div');
+                feedbackContainer.className = 'mt-6 hidden';
+
+                const feedbackHeader = document.createElement('div');
+                feedbackHeader.className = 'flex items-center mb-4';
+                const feedbackTitle = document.createElement('h4');
+                feedbackTitle.className = 'text-2xl font-bold text-cyan-400';
+                feedbackTitle.textContent = 'AI Coach Feedback';
+                const feedbackLoader = document.createElement('div');
+                feedbackLoader.className = 'loader ml-4';
+                feedbackLoader.style.display = 'none';
+                feedbackHeader.appendChild(feedbackTitle);
+                feedbackHeader.appendChild(feedbackLoader);
+                feedbackContainer.appendChild(feedbackHeader);
+
+                const feedbackResult = document.createElement('div');
+                feedbackResult.className = 'bg-gray-700 p-6 rounded-lg prose prose-invert max-w-none text-gray-300 hidden';
+                feedbackContainer.appendChild(feedbackResult);
+
+                form.addEventListener('submit', (event) => handleDynamicGameSubmit(event, game, {
+                    textarea,
+                    feedbackContainer,
+                    feedbackLoader,
+                    feedbackResult
+                }));
+
+                card.appendChild(form);
+                card.appendChild(feedbackContainer);
+
+                return card;
+            };
+
+            async function handleDynamicGameSubmit(event, game, elements) {
+                event.preventDefault();
+                const submission = elements.textarea.value.trim();
+                if (!submission) {
+                    return;
+                }
+
+                elements.feedbackContainer.classList.remove('hidden');
+                elements.feedbackResult.classList.add('hidden');
+                elements.feedbackLoader.style.display = 'block';
+
+                const prompt = buildEvaluationPrompt(game.prompt, submission, game.title);
 
                 try {
                     const responseText = await callGemini(prompt);
-                    
-                    // Extract score and update player data
-                    const scoreMatch = responseText.match(/SCORE: (\d+)/);
+                    const scoreMatch = responseText.match(/SCORE: (\d+)/i);
                     let score = 0;
+
                     if (scoreMatch) {
                         score = parseInt(scoreMatch[1], 10);
                         const playerIndex = leaderboardData.findIndex(p => p.name === currentPlayer.name);
@@ -439,182 +450,151 @@
                         }
                         renderLeaderboard();
                     }
-                    
-                    // Display feedback
+
                     const feedbackHtml = responseText
-                        .replace(/SCORE: \d+/, `<h3>Your Score for this submission: <strong class="text-cyan-400">${score}/100</strong></h3><p>Your total score is now ${currentPlayer.score}.</p>`)
+                        .replace(/SCORE: \d+/i, `<h3>Your Score for this submission: <strong class="text-cyan-400">${score}/100</strong></h3><p>Your total score is now ${currentPlayer.score}.</p>`)
                         .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
                         .replace(/\n/g, '<br>');
 
-                    feedbackResult.innerHTML = feedbackHtml;
+                    elements.feedbackResult.innerHTML = feedbackHtml;
                 } catch (error) {
-                    console.error("Error calling Gemini API:", error);
-                    feedbackResult.innerHTML = `<p class="text-red-400">Sorry, there was an error getting feedback. Please try again later.</p>`;
+                    console.error('Error calling Gemini API:', error);
+                    elements.feedbackResult.innerHTML = `<p class="text-red-400">Sorry, there was an error getting feedback. Please try again later.</p>`;
                 } finally {
-                    feedbackLoader.style.display = 'none';
-                    feedbackResult.classList.remove('hidden');
+                    elements.feedbackLoader.style.display = 'none';
+                    elements.feedbackResult.classList.remove('hidden');
                 }
             }
 
-            // Handle game 2 submission
-            async function handleGameSubmit2(e) {
-                e.preventDefault();
-                const submission = gameInput2.value.trim();
-                if (!submission) return;
+            const buildEvaluationPrompt = (basePrompt = '', submission = '', title = '') => {
+                const sanitizedSubmission = submission.replace(/"/g, '\\"');
 
-                feedbackContainer2.classList.remove('hidden');
-                feedbackResult2.classList.add('hidden');
-                feedbackLoader2.style.display = 'block';
-                
-                const prompt = `
-                    You are an expert AI Sourcing Coach. A participant has analyzed a job description for a "Lead UX Designer" and submitted a candidate persona.
-                    
-                    Job Description Snippet: "We're seeking a Lead UX Designer to own the user experience for our flagship B2B SaaS product. You'll guide a team of 3 designers, work with product managers to translate complex requirements into intuitive workflows, and champion a user-centered design culture. Must have 7+ years of experience, a portfolio showcasing complex problem-solving, and proficiency in Figma. Experience with data visualization is a huge plus."
-                    
-                    Submission: "${submission}"
-                    
-                    Your task is to:
-                    1.  Evaluate how well the persona captures the key aspects of the role (leadership, experience, skills, motivation).
-                    2.  Provide a score out of 100. The score MUST be on its own line like this: SCORE: [number].
-                    3.  Give 2-3 concrete tips for making the persona more insightful.
-                    4.  Format your response in simple markdown.
-                `;
-
-                try {
-                    const responseText = await callGemini(prompt);
-                    
-                    const scoreMatch = responseText.match(/SCORE: (\d+)/);
-                    let score = 0;
-                    if (scoreMatch) {
-                        score = parseInt(scoreMatch[1], 10);
-                        const playerIndex = leaderboardData.findIndex(p => p.name === currentPlayer.name);
-                        if (playerIndex !== -1) {
-                            leaderboardData[playerIndex].score += score;
-                            currentPlayer.score = leaderboardData[playerIndex].score;
-                        }
-                        renderLeaderboard();
-                    }
-                    
-                    const feedbackHtml = responseText
-                        .replace(/SCORE: \d+/, `<h3>Your Score for this submission: <strong class="text-cyan-400">${score}/100</strong></h3><p>Your total score is now ${currentPlayer.score}.</p>`)
-                        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                        .replace(/\n/g, '<br>');
-
-                    feedbackResult2.innerHTML = feedbackHtml;
-                } catch (error) {
-                    console.error("Error calling Gemini API:", error);
-                    feedbackResult2.innerHTML = `<p class="text-red-400">Sorry, there was an error getting feedback. Please try again later.</p>`;
-                } finally {
-                    feedbackLoader2.style.display = 'none';
-                    feedbackResult2.classList.remove('hidden');
+                if (!basePrompt) {
+                    return `Evaluate the following submission for ${title || 'this challenge'} and provide constructive feedback.\n\nSubmission: "${sanitizedSubmission}"`;
                 }
-            }
 
-            // Handle game 3 submission
-            async function handleGameSubmit3(e) {
-                e.preventDefault();
-                const submission = gameInput3.value.trim();
-                if (!submission) return;
-
-                feedbackContainer3.classList.remove('hidden');
-                feedbackResult3.classList.add('hidden');
-                feedbackLoader3.style.display = 'block';
-                
-                const prompt = `
-                    You are an expert AI Sourcing Coach. A participant has written an outreach message to a passive "Senior DevOps Engineer" who has been at their company for 5 years and spoke at a conference about "Scaling CI/CD Pipelines". The message must be under 100 words.
-                    
-                    Submission: "${submission}"
-                    
-                    Your task is to:
-                    1.  Analyze the message for personalization, clarity, conciseness, and effectiveness of the call-to-action.
-                    2.  Provide a score out of 100. The score MUST be on its own line like this: SCORE: [number].
-                    3.  Give 3 actionable tips for improving the outreach message.
-                    4.  Provide an improved version of the message.
-                    5.  Format your response in simple markdown.
-                `;
-
-                try {
-                    const responseText = await callGemini(prompt);
-                    
-                    const scoreMatch = responseText.match(/SCORE: (\d+)/);
-                    let score = 0;
-                    if (scoreMatch) {
-                        score = parseInt(scoreMatch[1], 10);
-                        const playerIndex = leaderboardData.findIndex(p => p.name === currentPlayer.name);
-                        if (playerIndex !== -1) {
-                            leaderboardData[playerIndex].score += score;
-                            currentPlayer.score = leaderboardData[playerIndex].score;
-                        }
-                        renderLeaderboard();
-                    }
-                    
-                    const feedbackHtml = responseText
-                        .replace(/SCORE: \d+/, `<h3>Your Score for this submission: <strong class="text-cyan-400">${score}/100</strong></h3><p>Your total score is now ${currentPlayer.score}.</p>`)
-                        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                        .replace(/\n/g, '<br>');
-
-                    feedbackResult3.innerHTML = feedbackHtml;
-                } catch (error) {
-                    console.error("Error calling Gemini API:", error);
-                    feedbackResult3.innerHTML = `<p class="text-red-400">Sorry, there was an error getting feedback. Please try again later.</p>`;
-                } finally {
-                    feedbackLoader3.style.display = 'none';
-                    feedbackResult3.classList.remove('hidden');
+                if (basePrompt.includes('{{submission}}')) {
+                    return basePrompt.replace(/{{submission}}/g, sanitizedSubmission);
                 }
-            }
 
-            // Handle game 4 submission
-            async function handleGameSubmit4(e) {
-                e.preventDefault();
-                const submission = gameInput4.value.trim();
-                if (!submission) return;
+                return `${basePrompt}\n\nSubmission: "${sanitizedSubmission}"`;
+            };
 
-                feedbackContainer4.classList.remove('hidden');
-                feedbackResult4.classList.add('hidden');
-                feedbackLoader4.style.display = 'block';
-                
-                const prompt = `
-                    You are an expert AI Sourcing Coach specializing in technical sourcing. A participant has written a Google X-ray search string to find Python developers in Berlin with Django experience on GitHub.
-                    
-                    Submission: "${submission}"
-                    
-                    Your task is to:
-                    1.  Evaluate the X-ray string for correctness, efficiency, and use of advanced operators.
-                    2.  Provide a score out of 100. The score MUST be on its own line like this: SCORE: [number].
-                    3.  Give 3 technical tips to refine the search string for better results.
-                    4.  Provide an improved, more robust version of the string.
-                    5.  Format your response in simple markdown.
-                `;
+            const escapeHtml = (value = '') => value
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
 
-                try {
-                    const responseText = await callGemini(prompt);
-                    
-                    const scoreMatch = responseText.match(/SCORE: (\d+)/);
-                    let score = 0;
-                    if (scoreMatch) {
-                        score = parseInt(scoreMatch[1], 10);
-                        const playerIndex = leaderboardData.findIndex(p => p.name === currentPlayer.name);
-                        if (playerIndex !== -1) {
-                            leaderboardData[playerIndex].score += score;
-                            currentPlayer.score = leaderboardData[playerIndex].score;
-                        }
-                        renderLeaderboard();
-                    }
-                    
-                    const feedbackHtml = responseText
-                        .replace(/SCORE: \d+/, `<h3>Your Score for this submission: <strong class="text-cyan-400">${score}/100</strong></h3><p>Your total score is now ${currentPlayer.score}.</p>`)
-                        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                        .replace(/\n/g, '<br>');
+            const formatTextWithLineBreaks = (text = '') => {
+                return text
+                    .split(/\n{2,}/)
+                    .map(paragraph => `<p>${escapeHtml(paragraph).replace(/\n/g, '<br>')}</p>`)
+                    .join('');
+            };
 
-                    feedbackResult4.innerHTML = feedbackHtml;
-                } catch (error) {
-                    console.error("Error calling Gemini API:", error);
-                    feedbackResult4.innerHTML = `<p class="text-red-400">Sorry, there was an error getting feedback. Please try again later.</p>`;
-                } finally {
-                    feedbackLoader4.style.display = 'none';
-                    feedbackResult4.classList.remove('hidden');
+            const toStringOrEmpty = (value, fallback = '') => {
+                if (value === undefined || value === null) {
+                    return fallback;
                 }
-            }
+                return String(value);
+            };
+
+            const normalizeGame = (game = {}, index = 0) => {
+                if (!game || typeof game !== 'object') {
+                    return null;
+                }
+
+                const title = game.title || game.Title || `Game ${index + 1}`;
+                const instructions = game.instructions || game.Instructions || '';
+                const prompt = game.prompt || game.Prompt || '';
+                const inputPlaceholder = game.inputPlaceholder || game.InputPlaceholder || '';
+                const rowsValue = Number(game.rows || game.Rows || game.inputRows || game.InputRows);
+
+                return {
+                    title: toStringOrEmpty(title, `Game ${index + 1}`) || `Game ${index + 1}`,
+                    instructions: toStringOrEmpty(instructions),
+                    prompt: toStringOrEmpty(prompt),
+                    inputPlaceholder: toStringOrEmpty(inputPlaceholder),
+                    rows: Number.isFinite(rowsValue) && rowsValue > 0 ? rowsValue : undefined
+                };
+            };
+
+            const getFallbackGames = () => ([
+                {
+                    title: 'Game 1: The Boolean Blacksmith',
+                    instructions: `You have a new role: "Senior Backend Engineer" specializing in distributed systems, located in Vienna, Austria. The client requires experience with Go (Golang) and Kubernetes. They have a strong preference for candidates who have contributed to open-source projects.
+
+Craft the most effective Boolean search string to find these candidates on a professional networking site.`,
+                    prompt: `You are an expert AI Sourcing Coach for recruiters. A participant has submitted the following Boolean search string for a 'Senior Backend Engineer' role in Vienna, Austria, with skills in Go (Golang), Kubernetes, and open-source contributions.
+
+Submission: "{{submission}}"
+
+Your task is to:
+1. Analyze the string for effectiveness, precision, and potential missed keywords.
+2. Provide a score out of 100. The score MUST be on its own line like this: SCORE: [number].
+3. Give 3 concrete, actionable tips for improvement in a bulleted list.
+4. Provide an improved version of their string.
+5. Format your response in simple markdown.`,
+                    inputPlaceholder: 'e.g., (engineer OR developer) AND ...'
+                },
+                {
+                    title: 'Game 2: The Persona Profiler',
+                    instructions: `Analyze the following job description snippet for a "Lead UX Designer" and create a concise candidate persona. Focus on key skills, experience level, and potential motivations.
+
+"We're seeking a Lead UX Designer to own the user experience for our flagship B2B SaaS product. You'll guide a team of 3 designers, work with product managers to translate complex requirements into intuitive workflows, and champion a user-centered design culture. Must have 7+ years of experience, a portfolio showcasing complex problem-solving, and proficiency in Figma. Experience with data visualization is a huge plus."
+
+Write a short candidate persona (3-4 sentences) that captures the essence of the ideal candidate.`,
+                    prompt: `You are an expert AI Sourcing Coach. A participant has analyzed a job description for a "Lead UX Designer" and submitted a candidate persona.
+
+Job Description Snippet: "We're seeking a Lead UX Designer to own the user experience for our flagship B2B SaaS product. You'll guide a team of 3 designers, work with product managers to translate complex requirements into intuitive workflows, and champion a user-centered design culture. Must have 7+ years of experience, a portfolio showcasing complex problem-solving, and proficiency in Figma. Experience with data visualization is a huge plus."
+
+Submission: "{{submission}}"
+
+Your task is to:
+1. Evaluate how well the persona captures the key aspects of the role (leadership, experience, skills, motivation).
+2. Provide a score out of 100. The score MUST be on its own line like this: SCORE: [number].
+3. Give 2-3 concrete tips for making the persona more insightful.
+4. Format your response in simple markdown.`,
+                    inputPlaceholder: 'e.g., An experienced design leader motivated by mentoring...'
+                },
+                {
+                    title: 'Game 3: The Outreach Originator',
+                    instructions: `You've found a promising passive candidate for a "Senior DevOps Engineer" role. Her online profile shows she's been at her current company for 5 years and has spoken at a conference about "Scaling CI/CD Pipelines".
+
+Write a concise and personalized outreach message (under 100 words) to this candidate to gauge her interest.`,
+                    prompt: `You are an expert AI Sourcing Coach. A participant has written an outreach message to a passive "Senior DevOps Engineer" who has been at their company for 5 years and spoke at a conference about "Scaling CI/CD Pipelines". The message must be under 100 words.
+
+Submission: "{{submission}}"
+
+Your task is to:
+1. Analyze the message for personalization, clarity, conciseness, and effectiveness of the call-to-action.
+2. Provide a score out of 100. The score MUST be on its own line like this: SCORE: [number].
+3. Give 3 actionable tips for improving the outreach message.
+4. Provide an improved version of the message.
+5. Format your response in simple markdown.`,
+                    inputPlaceholder: 'e.g., Hi [Candidate Name], I was impressed by your talk on...',
+                    rows: 5
+                },
+                {
+                    title: 'Game 4: The X-Ray Expert',
+                    instructions: `You need to find Python developers in Berlin who have experience with Django and have profiles on GitHub. Standard searches are not yielding good results.
+
+Write a Google X-ray search string to find user profiles on GitHub that match these criteria.`,
+                    prompt: `You are an expert AI Sourcing Coach specializing in technical sourcing. A participant has written a Google X-ray search string to find Python developers in Berlin with Django experience on GitHub.
+
+Submission: "{{submission}}"
+
+Your task is to:
+1. Evaluate the X-ray string for correctness, efficiency, and use of advanced operators.
+2. Provide a score out of 100. The score MUST be on its own line like this: SCORE: [number].
+3. Give 3 technical tips to refine the search string for better results.
+4. Provide an improved, more robust version of the string.
+5. Format your response in simple markdown.`,
+                    inputPlaceholder: 'e.g., site:github.com ...'
+                }
+            ]);
 
 
             // Handle AI Coach chat submission
