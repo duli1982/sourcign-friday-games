@@ -279,13 +279,7 @@
                 score: 0
             };
 
-            let leaderboardData = [
-                { name: 'Alex Johnson', score: 150 },
-                { name: 'Maria Garcia', score: 135 },
-                { name: 'Chen Wei', score: 110 },
-                { name: 'Fatima Al-Sayed', score: 95 },
-                { name: 'John Smith', score: 80 }
-            ];
+            let leaderboardData = [];
 
             // --- DOM ELEMENTS ---
             const nameModal = document.getElementById('nameModal');
@@ -340,6 +334,7 @@
                 gameForm4.addEventListener('submit', handleGameSubmit4);
                 coachForm.addEventListener('submit', handleCoachSubmit);
                 mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+                fetchLeaderboard();
             };
 
             // Handle user name submission
@@ -348,15 +343,12 @@
                 const name = nameInput.value.trim();
                 if (name) {
                     currentPlayer.name = name;
-                    // Add player to leaderboard if not already there
-                    if (!leaderboardData.some(p => p.name === name)) {
-                        leaderboardData.push({ name: name, score: 0 });
-                    }
                     playerNameHome.textContent = name;
                     nameModal.style.display = 'none';
                     appContainer.classList.remove('hidden');
                     renderLeaderboard();
                     showPage('home');
+                    fetchLeaderboard();
                 }
             };
 
@@ -382,7 +374,7 @@
             const renderLeaderboard = () => {
                 // Sort by score descending
                 leaderboardData.sort((a, b) => b.score - a.score);
-                
+
                 leaderboardBody.innerHTML = ''; // Clear existing table
                 
                 leaderboardData.forEach((player, index) => {
@@ -399,6 +391,44 @@
                     `;
                     leaderboardBody.appendChild(row);
                 });
+            };
+
+            const updateLeaderboardFromServer = (data = []) => {
+                leaderboardData = Array.isArray(data)
+                    ? data.map(entry => ({
+                        name: entry.name,
+                        score: Number(entry.score) || 0
+                    }))
+                    : [];
+
+                if (currentPlayer.name) {
+                    const playerEntry = leaderboardData.find(player => player.name === currentPlayer.name);
+                    currentPlayer.score = playerEntry ? playerEntry.score : 0;
+                }
+
+                renderLeaderboard();
+            };
+
+            const fetchLeaderboard = () => {
+                if (typeof google !== 'undefined' && google.script && google.script.run) {
+                    google.script.run
+                        .withSuccessHandler(updateLeaderboardFromServer)
+                        .withFailureHandler(error => console.error('Failed to load leaderboard', error))
+                        .getLeaderboard();
+                }
+            };
+
+            const recordScoreDelta = (delta) => {
+                if (!currentPlayer.name) {
+                    return;
+                }
+
+                if (typeof google !== 'undefined' && google.script && google.script.run) {
+                    google.script.run
+                        .withSuccessHandler(updateLeaderboardFromServer)
+                        .withFailureHandler(error => console.error('Failed to record score', error))
+                        .recordScore(currentPlayer.name, delta);
+                }
             };
 
             // Handle game submission
@@ -430,19 +460,16 @@
                     // Extract score and update player data
                     const scoreMatch = responseText.match(/SCORE: (\d+)/);
                     let score = 0;
+                    let projectedTotal = currentPlayer.score;
                     if (scoreMatch) {
                         score = parseInt(scoreMatch[1], 10);
-                        const playerIndex = leaderboardData.findIndex(p => p.name === currentPlayer.name);
-                        if (playerIndex !== -1) {
-                            leaderboardData[playerIndex].score += score;
-                            currentPlayer.score = leaderboardData[playerIndex].score;
-                        }
-                        renderLeaderboard();
+                        projectedTotal = (currentPlayer.score || 0) + score;
+                        recordScoreDelta(score);
                     }
-                    
+
                     // Display feedback
                     const feedbackHtml = responseText
-                        .replace(/SCORE: \d+/, `<h3>Your Score for this submission: <strong class="text-cyan-400">${score}/100</strong></h3><p>Your total score is now ${currentPlayer.score}.</p>`)
+                        .replace(/SCORE: \d+/, `<h3>Your Score for this submission: <strong class="text-cyan-400">${score}/100</strong></h3><p>Your total score is now ${projectedTotal ?? currentPlayer.score}.</p>`)
                         .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
                         .replace(/\n/g, '<br>');
 
@@ -485,18 +512,15 @@
                     
                     const scoreMatch = responseText.match(/SCORE: (\d+)/);
                     let score = 0;
+                    let projectedTotal = currentPlayer.score;
                     if (scoreMatch) {
                         score = parseInt(scoreMatch[1], 10);
-                        const playerIndex = leaderboardData.findIndex(p => p.name === currentPlayer.name);
-                        if (playerIndex !== -1) {
-                            leaderboardData[playerIndex].score += score;
-                            currentPlayer.score = leaderboardData[playerIndex].score;
-                        }
-                        renderLeaderboard();
+                        projectedTotal = (currentPlayer.score || 0) + score;
+                        recordScoreDelta(score);
                     }
-                    
+
                     const feedbackHtml = responseText
-                        .replace(/SCORE: \d+/, `<h3>Your Score for this submission: <strong class="text-cyan-400">${score}/100</strong></h3><p>Your total score is now ${currentPlayer.score}.</p>`)
+                        .replace(/SCORE: \d+/, `<h3>Your Score for this submission: <strong class="text-cyan-400">${score}/100</strong></h3><p>Your total score is now ${projectedTotal ?? currentPlayer.score}.</p>`)
                         .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
                         .replace(/\n/g, '<br>');
 
@@ -538,18 +562,15 @@
                     
                     const scoreMatch = responseText.match(/SCORE: (\d+)/);
                     let score = 0;
+                    let projectedTotal = currentPlayer.score;
                     if (scoreMatch) {
                         score = parseInt(scoreMatch[1], 10);
-                        const playerIndex = leaderboardData.findIndex(p => p.name === currentPlayer.name);
-                        if (playerIndex !== -1) {
-                            leaderboardData[playerIndex].score += score;
-                            currentPlayer.score = leaderboardData[playerIndex].score;
-                        }
-                        renderLeaderboard();
+                        projectedTotal = (currentPlayer.score || 0) + score;
+                        recordScoreDelta(score);
                     }
-                    
+
                     const feedbackHtml = responseText
-                        .replace(/SCORE: \d+/, `<h3>Your Score for this submission: <strong class="text-cyan-400">${score}/100</strong></h3><p>Your total score is now ${currentPlayer.score}.</p>`)
+                        .replace(/SCORE: \d+/, `<h3>Your Score for this submission: <strong class="text-cyan-400">${score}/100</strong></h3><p>Your total score is now ${projectedTotal ?? currentPlayer.score}.</p>`)
                         .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
                         .replace(/\n/g, '<br>');
 
@@ -591,18 +612,15 @@
                     
                     const scoreMatch = responseText.match(/SCORE: (\d+)/);
                     let score = 0;
+                    let projectedTotal = currentPlayer.score;
                     if (scoreMatch) {
                         score = parseInt(scoreMatch[1], 10);
-                        const playerIndex = leaderboardData.findIndex(p => p.name === currentPlayer.name);
-                        if (playerIndex !== -1) {
-                            leaderboardData[playerIndex].score += score;
-                            currentPlayer.score = leaderboardData[playerIndex].score;
-                        }
-                        renderLeaderboard();
+                        projectedTotal = (currentPlayer.score || 0) + score;
+                        recordScoreDelta(score);
                     }
-                    
+
                     const feedbackHtml = responseText
-                        .replace(/SCORE: \d+/, `<h3>Your Score for this submission: <strong class="text-cyan-400">${score}/100</strong></h3><p>Your total score is now ${currentPlayer.score}.</p>`)
+                        .replace(/SCORE: \d+/, `<h3>Your Score for this submission: <strong class="text-cyan-400">${score}/100</strong></h3><p>Your total score is now ${projectedTotal ?? currentPlayer.score}.</p>`)
                         .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
                         .replace(/\n/g, '<br>');
 
